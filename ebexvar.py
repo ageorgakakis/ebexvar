@@ -116,7 +116,7 @@ def main():
     seed = 1
     
     # compile the stan model
-    model = CmdStanModel(stan_file="STANMODELS/eBExVar.stan", cpp_options={'STAN_THREADS':'true'})#, force_compile=True)
+    model = CmdStanModel(stan_file="STANMODELS/eBExVar.stan", cpp_options={'STAN_THREADS':'true'}, force_compile=True)
 
     # read the file with the light curves 
     data = Table.read("DATA/mock_lcs.fits")
