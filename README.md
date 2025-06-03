@@ -1,5 +1,6 @@
 # eBExVar (ensemble Bayesian Excess Variance)
-# Bayesian Estimation of the ensemble Normlaised Excess Variance for Poisson Data
+
+## Bayesian Estimation of the ensemble Normlaised Excess Variance for Poisson Data
 
 This project provides code (python script ebexvar.py) to determine the normalised excess variance of 
 a population of Active Galactic Nuclei (AGN) for which multiepoch (X-ray) light curves are available. 
