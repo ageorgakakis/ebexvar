@@ -9,3 +9,22 @@ The calculation follows the Bayesian methodology described in Georgakakis et al.
 The sampling of the likelihood uses the python wrapper of the Stan platform (https://mc-stan.org/) 
 for statistical modeling and high-performance statistical computation. Installation of the Stan 
 python wrapper (https://mc-stan.org/cmdstanpy/) is required to run the code. 
+
+Run the sample code as
+```
+python ebexvar.py
+```
+
+It reads the stan model in 
+
+```
+STANMODELS/eBExVar.stan
+```
+
+and the mock X-ray photon count light curves in 
+
+ ```
+DATA/mock_lcs.fits
+```
+
+to infer the ensemble normalised excess variance of the population.
