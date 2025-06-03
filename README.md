@@ -2,29 +2,31 @@
 
 ## Bayesian Estimation of the ensemble Normlaised Excess Variance for Poisson Data
 
-This project provides code (python script ebexvar.py) to determine the normalised excess variance of 
-a population of Active Galactic Nuclei (AGN) for which multiepoch (X-ray) light curves are available. 
-The calculation follows the Bayesian methodology described in Georgakakis et al. (2025, in prep.). 
+This project provides code (python script ebexvar.py) to determine the ensemble normalised excess variance of 
+a population of Active Galactic Nuclei (AGN) for which multiepoch (X-ray) light curves of Poisson photon counts 
+are available. The calculation follows the Bayesian methodology described in Georgakakis et al. (2025, in prep.). 
 
 The sampling of the likelihood uses the python wrapper of the Stan platform (https://mc-stan.org/) 
 for statistical modeling and high-performance statistical computation. Installation of the Stan 
 python wrapper (https://mc-stan.org/cmdstanpy/) is required to run the code. 
 
-Run the sample code as
+The sample code can be run as
 ```
 python ebexvar.py
 ```
 
-It reads the stan model in 
+It reads and compiles the stan model in 
 
 ```
 STANMODELS/eBExVar.stan
 ```
 
-and the mock X-ray photon count light curves in 
+and the mock X-ray photon-count light curves in 
 
  ```
 DATA/mock_lcs.fits
 ```
 
 to infer the ensemble normalised excess variance of the population.
+
+The mock light curve catalogue (DATA/mock_lcs.fits) have 5-epochs per objects for a total of 100 mock AGN. The photon counts (column "counts"), exposure time (column "time") and background (column "bkg") of each epoch are estimated using the typical signal-to-noise ratio of the [eROSITA All Sky Survey Data Release 1 (eRASS1)](https://erosita.mpe.mpg.de/dr1/). Exposure times and background values are randomly drawn from the eRASS1 source catalogue and are assigned to the mock AGN, assuming a flux of 1.6x10<sup>-13</sup> to estimate  
